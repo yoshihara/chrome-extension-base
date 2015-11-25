@@ -6,6 +6,8 @@
 
 - grep "TODO"
 - replace each meaningful content to "TODO"
+- modify `metadata/manifest.json`
+- Code
 
 ## develop
 
