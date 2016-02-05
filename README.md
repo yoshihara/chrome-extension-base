@@ -4,10 +4,10 @@
 
 ## TODO
 
-- grep "TODO"
-- replace each meaningful content to "TODO"
-- modify `metadata/manifest.json`
-- Code
+- build/ : ビルドファイル（chromeに指定するディレクトリ）
+- metadata/ : manifest.jsonやアイコン
+- src/ : ソースコード
+― lib/ : 外部ライブラリ
 
 ## develop
 

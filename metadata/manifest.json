@@ -22,7 +22,7 @@
 
     "content_scripts": [
     {
-      "matches": ["TODO: urls"],
+      "matches": ["https://github.com/*"],
       "js": ["/lib/bluebird.min.js", "/lib/jquery-2.1.4.min.js", "/lib/lodash.js", "content.js"]
     }],
 
