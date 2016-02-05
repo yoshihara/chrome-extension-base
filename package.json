@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "TODO: extension description",
   "main": "index.js",
-  // "private": false,
+  "private": false,
   "scripts": {
     "build": "gulp build",
     "rebuild": "gulp rebuild",
