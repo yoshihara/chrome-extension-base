@@ -1,8 +1,6 @@
 # README
 
-## TODO
-
-## TODO
+## Directory
 
 - build/ : ビルドファイル（chromeに指定するディレクトリ）
 - metadata/ : manifest.jsonやアイコン
