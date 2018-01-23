@@ -10,7 +10,7 @@
 ## develop
 
 ```sh
-$ yarninstall
+$ yarn install
 $ yarn run build
 $ yarn run watch
 ```
