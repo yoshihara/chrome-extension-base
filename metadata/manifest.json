@@ -16,14 +16,14 @@
     "options_page": "options.html",
 
     "background": {
-        "scripts": ["/lib/bluebird.min.js", "/lib/jquery-2.1.4.min.js", "/lib/lodash.js", "background.js"],
+        "scripts": ["background.bundle.js"],
         "persistent": false
     },
 
     "content_scripts": [
     {
       "matches": ["https://github.com/*"],
-      "js": ["/lib/bluebird.min.js", "/lib/jquery-2.1.4.min.js", "/lib/lodash.js", "content.js"]
+      "js": ["content.bundle.js"]
     }],
 
     "commands": {
@@ -39,5 +39,11 @@
         "default_icon": "icon19.png",
         "default_title": "title",
         "default_popup": "index.html"
+    },
+
+    "icons": {
+        "16"  : "icon19.png",
+        "48"  : "icon19.png",
+        "128" : "icon19.png"
     }
 }

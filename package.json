@@ -5,10 +5,19 @@
   "main": "index.js",
   "private": false,
   "scripts": {
-    "build": "gulp build",
-    "rebuild": "gulp rebuild",
-    "release": "gulp release",
-    "watch": "gulp default"
+    "package": "npm run build && zip package.zip build/**/*",
+    "clean": "rm -rf build/ && mkdir -p build",
+    "build:js": "webpack --config webpack.config.js",
+    "build:metadata": "rm -rf build/*.png build/manifest.json && cp -a metadata/* build/",
+    "build:html": "rm -rf build/*.html && ./scripts/build_haml.sh",
+    "build:css": "rm -rf build/*.css && node-sass -q src/sass -o build",
+    "build": "npm-run-all clean build:*",
+    "watch:js": "watchy -w src/js -w webpack.config.js -- npm run build:js",
+    "watch:lib": "watchy -w lib -- npm run build:js",
+    "watch:metadata": "watchy -w metadata -- npm run build:metadata",
+    "watch:html": "watchy -w src/haml -- npm run build:html",
+    "watch:css": "watchy -w src/sass -- npm run build:css",
+    "watch": "npm-run-all clean -p watch:*"
   },
   "repository": {
     "type": "git",
@@ -19,17 +28,13 @@
   "license": "MIT",
   "homepage": "http://TODO",
   "devDependencies": {
-    "coffee-script": "^1.10.0",
-    "del": "^2.0.2",
-    "gulp": "^3.9.0",
-    "gulp-concat": "^2.5.2",
-    "gulp-download": "0.0.1",
-    "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-ruby-haml": "0.0.4",
-    "gulp-sass": "^2.0.4",
-    "gulp-uglify": "^1.1.0",
-    "gulp-zip": "^3.0.2",
-    "run-sequence": "^1.1.4"
+    "expose-loader": "^0.7.3",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "watchy": "^0.7.0",
+    "webpack": "^3.5.4"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }
