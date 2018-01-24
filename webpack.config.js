@@ -11,10 +11,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].bundle.js'
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      jQuery: 'jquery' // for jquery.esarea
-    })
-  ]
+  }
+  // plugins: [
+  //   new webpack.ProvidePlugin({
+  //     jQuery: 'jquery'
+  //   })
+  // ]
 };
